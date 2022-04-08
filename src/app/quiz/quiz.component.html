@@ -2,7 +2,7 @@
     <h1 class="display-4 offset-4"> Are You Good Person?</h1>
     <hr>
     <div class="row">
-        <div class="col-6 offset-4" *ngIf="showQuiz">
+        <div class="col-6 offset-3" *ngIf="showQuiz">
             <form #myForm="ngForm" (submit)="handleSumbit(myForm.value)">
                 <div class="mb-3">
                     <p>What would you do if you had a billion dollars?</p>
@@ -45,7 +45,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-        <div class="col-6 offset-4" *ngIf="showResult">
+        <div class="col-6 offset-3" *ngIf="showResult">
             <div class="mb-3"[ngSwitch]="result" >
                 <img *ngSwitchCase="'Good person'"
                 src={{imgGood}}
