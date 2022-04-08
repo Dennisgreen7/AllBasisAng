@@ -49,11 +49,12 @@
             <div class="mb-3"[ngSwitch]="result" >
                 <img *ngSwitchCase="'Good person'"
                 src={{imgGood}}
-                class="img-thumbnail" width="200" height="200">
+                class="img-thumbnail" width="500" height="500">
                 <img *ngSwitchCase="'Bad person'"
                 src={{imgBad}}
-                class="img-thumbnail" width="200" height="200">
+                class="img-thumbnail" width="500" height="500">
             </div>
+            <button type="submit" class="btn btn-primary" (click)="saveResults()">Save</button>
         </div>
     </div>
 </div>
