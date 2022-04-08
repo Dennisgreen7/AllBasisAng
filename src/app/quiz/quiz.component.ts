@@ -36,9 +36,10 @@ export class QuizComponent implements OnInit {
     else{
       this.result='Bad person';
     }
-    alert(this.result);
     this.showQuiz = false;
     this.showResult = true;
   }
- //// localStorage.setItem('result', this.result='Bad person');
+  saveResults(){
+    localStorage.setItem('result', this.result);
+  }
 }
