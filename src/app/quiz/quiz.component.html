@@ -1,0 +1,59 @@
+<div class="col-12">
+    <h1 class="display-4 offset-4"> Are You Good Person?</h1>
+    <hr>
+    <div class="row">
+        <div class="col-6 offset-4" *ngIf="showQuiz">
+            <form #myForm="ngForm" (submit)="handleSumbit(myForm.value)">
+                <div class="mb-3">
+                    <p>What would you do if you had a billion dollars?</p>
+                    <div class="form-check form-check">
+                        <input class="form-check-input" type="radio" id="q11" ngModel name="Q1" value="1">
+                        <label class="form-check-label" for="q11">I'd donate most of it to charity and invest the
+                            rest.</label>
+                    </div>
+                    <div class="form-check form-check">
+                        <input class="form-check-input" type="radio" id="q12" ngModel name="Q1" value="2">
+                        <label class="form-check-label" for="q12">I'd burn fistfuls of cash in front of homeless
+                            people.</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>If your best friend told you a very juicy secret about herself, would you be able to resist
+                        telling it to all of your mutual friends?</p>
+                    <div class="form-check form-check">
+                        <input class="form-check-input" type="radio" id="q21" ngModel name="Q2" value="1">
+                        <label class="form-check-label" for="q21">Yes. I want to keep her trust.</label>
+                    </div>
+                    <div class="form-check form-check">
+                        <input class="form-check-input" type="radio" id="q22" ngModel name="Q2" value="2">
+                        <label class="form-check-label" for="q22">I'd tell everybody right away.</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Have you ever tried to get revenge on one of your exes?
+                    </p>
+                    <div class="form-check form-check">
+                        <input class="form-check-input" type="radio" id="q31" ngModel name="Q3" value="1">
+                        <label class="form-check-label" for="q31">Nope. Revenge is wrong.</label>
+                    </div>
+                    <div class="form-check form-check">
+                        <input class="form-check-input" type="radio" id="q32" ngModel name="Q3" value="2">
+                        <label class="form-check-label" for="q32">The best revenge is dating your ex's friends, which I
+                            have definitely done.</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-6 offset-4" *ngIf="showResult">
+            <div class="mb-3"[ngSwitch]="result" >
+                <img *ngSwitchCase="'Good person'"
+                src={{imgGood}}
+                class="img-thumbnail" width="200" height="200">
+                <img *ngSwitchCase="'Bad person'"
+                src={{imgBad}}
+                class="img-thumbnail" width="200" height="200">
+            </div>
+        </div>
+    </div>
+</div>
